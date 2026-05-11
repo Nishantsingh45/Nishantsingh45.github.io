@@ -1,0 +1,56 @@
+# Nishant Singh — AI Engineer
+
+> AI Engineer with 2+ years building production AI agents, RAG pipelines, voice bots, and scalable backend systems. Founding engineer at AeroChat. Author of Wisp — an open-source offline dictation tool written in Rust.
+
+## About
+
+Nishant Singh is an AI Engineer based in India. He joined AeroChat as a founding engineer and currently leads the tech team. He specialises in LLM integration, multi-agent orchestration, MCP (Model Context Protocol), vector databases, and real-time backend systems.
+
+Outside of work he builds open-source tools — most notably Wisp, a fully offline Windows dictation tool powered by Rust and Whisper.cpp with no cloud dependency.
+
+## Core Expertise
+
+- AI Agents (multi-agent systems, agentic RAG, voice agents)
+- MCP — Model Context Protocol (server and client)
+- RAG pipelines (LangChain, LangGraph, PGVector, hybrid search)
+- Vector databases (PGVector, Pinecone, FAISS, Weaviate, Qdrant)
+- LLM integration (OpenAI, Claude, Gemini, AWS Bedrock)
+- Real-time backend systems (FastAPI, Flask, WebSockets)
+- Systems programming (Rust, local AI inference, Whisper.cpp)
+- Python, Docker, AWS, PostgreSQL, MongoDB
+
+## Experience
+
+### AeroChat (Sept 2023 – Present)
+Full Stack AI Engineer · Remote, India
+Founding engineer; leading architecture and technical direction. Built multi-agent AI platform (RAG + PGVector + MCP) from 0 to 1,000+ users. Shipped real-time voice agents with WebSocket backends.
+
+### Samsung SDS (Mar – Jun 2023)
+SDE Intern · Gurugram, India
+
+### Nanoprecise Sci Corp (Jan – Feb 2023)
+Product Development Intern · Bangalore, India
+IoT monitoring pipelines, ML-based predictive maintenance.
+
+## Projects
+
+### Wisp — Offline AI Dictation Tool
+https://github.com/Nishantsingh45/wisp
+Rust · Whisper.cpp · Vulkan/CUDA · WebRTC VAD · MIT License
+Native-Rust push-to-talk dictation for Windows. Fully offline. ~70% smaller disk, ~95% lower cold-start RAM vs Electron alternatives. Idle RAM ~44 MB after model eviction. Latency ~2.9s on Intel Core Ultra 5 + Vulkan.
+
+### Namecard Bot — Business Card Scanner via WhatsApp
+https://github.com/Nishantsingh45/Namecard_bot
+Python · OCR · WhatsApp Business API
+Real-time WhatsApp bot for digitizing business cards with structured contact extraction.
+
+## Education
+
+B.E. Electronics and Communication · UIET, Panjab University · CGPA 8.41 · 2019–2023
+
+## Contact
+
+- Email: nishantsingh4045@gmail.com
+- GitHub: https://github.com/Nishantsingh45
+- LinkedIn: https://linkedin.com/in/nishant-singh-a5b051199/
+- Portfolio: https://nishantsingh45.github.io
