@@ -1,614 +1,1143 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishant Singh — AI Engineer</title>
+<meta name="description" content="Nishant Singh is an AI Engineer with 2+ years building production AI agents, RAG pipelines, voice bots, and scalable backend systems. Founding engineer at AeroChat, author of Wisp (open-source offline Rust/Whisper dictation tool). Expert in LLMs, MCP, multi-agent systems, PGVector, LangChain, FastAPI.">
+<meta name="keywords" content="AI Engineer, LLM, RAG, MCP, Model Context Protocol, AI Agents, Voice Agents, LangChain, LangGraph, PGVector, FastAPI, Python, Rust, Whisper, Nishant Singh">
+<meta name="author" content="Nishant Singh">
+<meta name="robots" content="index, follow">
 
-  <title>Nishant Singh - Personal Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nishant Singh — AI Engineer">
+<meta property="og:description" content="AI Engineer specialising in production AI agents, RAG pipelines, MCP, and voice bots. Founding engineer at AeroChat. Author of Wisp — open-source offline Rust/Whisper dictation tool.">
+<meta property="og:url" content="https://nishantsingh45.github.io">
+<meta property="og:site_name" content="Nishant Singh Portfolio">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nishant Singh — AI Engineer">
+<meta name="twitter:description" content="AI Engineer · LLMs · MCP · RAG · Voice Agents · Rust. Founding engineer at AeroChat. Author of Wisp.">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<!-- AI crawler hints -->
+<meta name="ai-content-type" content="portfolio, professional profile">
+<meta name="ai-topics" content="AI engineering, LLM integration, RAG, MCP, multi-agent systems, voice agents, vector databases, Python, Rust, backend development">
+<link rel="me" href="https://github.com/Nishantsingh45">
+<link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c10;
+    --bg2: #0d1117;
+    --surface: #111820;
+    --border: #1e2d3d;
+    --border2: #243447;
+    --text: #c9d1d9;
+    --text-dim: #586980;
+    --text-bright: #e6edf3;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #f78166;
+    --accent4: #d2a8ff;
+    --glow: rgba(88, 166, 255, 0.08);
+  }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID OVERLAY ───────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(88,166,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(88,166,255,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(8,12,16,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text-bright);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ────────────────────────────────────────── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    z-index: 1;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--accent2);
+    letter-spacing: 0.12em;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent2);
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.95;
+    color: var(--text-bright);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  .hero-name .line2 {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(88,166,255,0.4);
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .hero-desc strong { color: var(--text); font-weight: 400; }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.3s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #080c10;
+  }
+
+  .btn-primary:hover {
+    background: #79c0ff;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(88,166,255,0.25);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border2);
+  }
+
+  .btn-ghost:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+    background: var(--glow);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dim);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.5s forwards;
+  }
+
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--border2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--accent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  /* ── SECTION BASE ────────────────────────────────── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    margin-bottom: 48px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 120px;
+  }
+
+  .section-label .num {
+    color: var(--text-dim);
+  }
+
+  /* ── EXPERIENCE ──────────────────────────────────── */
+  .exp-grid {
+    display: grid;
+    gap: 2px;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .exp-item:last-child { border-bottom: 1px solid var(--border); }
+
+  .exp-meta {
+    padding-top: 2px;
+  }
+
+  .exp-date {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .exp-loc {
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .exp-badge {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 8px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    background: rgba(63, 185, 80, 0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(63,185,80,0.2);
+  }
+
+  .exp-badge.past {
+    background: rgba(88,166,255,0.08);
+    color: var(--text-dim);
+    border-color: var(--border);
+  }
+
+  .exp-content {}
+
+  .exp-company {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-bright);
+    margin-bottom: 2px;
+  }
+
+  .exp-role {
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exp-bullets li {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .exp-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .exp-bullets li strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ── PROJECTS ────────────────────────────────────── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent4));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--border2);
+    background: #141c26;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  .project-card:hover::before { transform: scaleX(1); }
+
+  .project-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .project-card.featured::before {
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+  }
+
+  .project-tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--accent2);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .project-tag.system { color: var(--accent); }
+
+  .project-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text-bright);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .project-sub {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+
+  .project-desc {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .project-desc strong { color: var(--text); font-weight: 400; }
+
+  .project-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .stat-bar {
+    flex: 1;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .stat-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--accent2);
+    transform-origin: left;
+    animation: barGrow 1.2s ease forwards;
+    transform: scaleX(0);
+  }
+
+  .stat-val {
+    font-size: 11px;
+    color: var(--accent2);
+    width: 50px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .stack-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: rgba(88,166,255,0.08);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    letter-spacing: 0.04em;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .project-link:hover { gap: 10px; }
+
+  /* ── SKILLS ──────────────────────────────────────── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .skill-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .skill-group-name {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .skill-group-name::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+    transition: all 0.15s;
+    cursor: default;
+  }
+
+  .skill-tag:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+    background: var(--glow);
+  }
+
+  .skill-tag.hot {
+    color: var(--accent);
+    border-color: rgba(88,166,255,0.3);
+    background: rgba(88,166,255,0.06);
+  }
+
+  /* ── ABOUT / CONTACT ─────────────────────────────── */
+  #contact {
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--text-bright);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .contact-text p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s;
+    background: var(--surface);
+  }
+
+  .contact-link:hover {
+    color: var(--text-bright);
+    border-color: var(--accent);
+    background: var(--glow);
+    transform: translateX(4px);
+  }
+
+  .contact-link .cl-icon {
+    width: 28px; height: 28px;
+    border-radius: 3px;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .contact-link .cl-label { flex: 1; }
+  .contact-link .cl-val { color: var(--accent); font-size: 11px; }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 24px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  footer p span { color: var(--accent); }
+
+  /* ── TERMINAL BLOCK ──────────────────────────────── */
+  .terminal {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot-red   { background: #f78166; }
+  .dot-yellow{ background: #e3b341; }
+  .dot-green { background: var(--accent2); }
+
+  .terminal-title {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-left: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .terminal-body {
+    padding: 20px 18px;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .t-prompt { color: var(--accent2); }
+  .t-cmd    { color: var(--text-bright); }
+  .t-comment{ color: var(--text-dim); }
+  .t-key    { color: var(--accent4); }
+  .t-val    { color: var(--accent2); }
+  .t-str    { color: #f0a672; }
+  .t-num    { color: var(--accent); }
+  .t-cursor {
+    display: inline-block;
+    width: 8px; height: 14px;
+    background: var(--accent);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+
+  /* ── ANIMATIONS ──────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollLine {
+    0%   { left: -100%; }
+    50%  { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  @keyframes barGrow {
+    to { transform: scaleX(1); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    #hero { padding: 100px 24px 60px; }
+    section { padding: 60px 24px; }
+    .exp-item { grid-template-columns: 1fr; gap: 8px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+  }
+</style>
 </head>
-
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">NS<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+<!-- HERO -->
+<section id="hero" style="max-width:100%; padding-top:120px;">
+  <div class="hero-inner">
+    <div class="hero-tag">AI ENGINEER</div>
+    <h1 class="hero-name">
+      Nishant<br>
+      <span class="line2">Singh</span>
+    </h1>
+    <p class="hero-desc">
+      Building production AI systems that <strong>actually hold up</strong>. Joined AeroChat as a founding engineer, now leading its tech team. Ship things outside of work too — Wisp is a <strong>fully offline</strong> dictation engine in Rust.
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:nishantsingh4045@gmail.com" class="btn btn-primary">get in touch</a>
+      <a href="https://github.com/Nishantsingh45" target="_blank" class="btn btn-ghost">github ↗</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    SCROLL
+  </div>
+</section>
 
-      <div class="profile">
-        <img src="assets/img/profile-img.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Nishant Singh</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label"><span class="num">01 /</span> EXPERIENCE</div>
+  <div class="exp-grid">
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">SEPT 2023 — PRESENT</div>
+        <div class="exp-loc">Remote, India</div>
+        <div class="exp-badge">current</div>
       </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <!--<li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>-->
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+      <div class="exp-content">
+        <div class="exp-company">AeroChat</div>
+        <div class="exp-role">Full Stack AI Engineer</div>
+        <ul class="exp-bullets">
+          <li>Founding engineer; <strong>leading architecture and technical direction</strong> of the platform from inception to production.</li>
+          <li>Designed and scaled a <strong>multi-agent AI system</strong> (RAG + PGVector + MCP) from 0 to 1,000+ users across WhatsApp, Instagram, Telegram, Messenger, and Shopify.</li>
+          <li>Built <strong>low-latency voice agents</strong> using real-time WebSockets (FastAPI/Flask), enabling seamless conversational interactions across all channels.</li>
         </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Nishant Singh</h1>
-      <p>I'm <span class="typed" data-typed-items="Developer, Freelancer, Cricketer"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Committed and goal-oriented Engineer currently working as a full stack Software Developer. Possess excellent knowledge in C++, Python, Machine Learning , Deep Learning . Ability to learn things quickly and capable of working in a fast-paced and team-driven environment.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Full stack Python Developer &amp; AI/ML Developer.</h3>
-            <p class="fst-italic">
-              I am a Full stack Python Developer &amp; AI/ML Developer. I have worked on various projects and have a good knowledge of Python, Machine Learning, Deep Learning, Data Science, and Web Development.
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>29th March 2001</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.singhnishant.me</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9602269504</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Azamgarh, Uttar Pradesh</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelors of Engineering</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>nishantsingh4045@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts"style="display: none;">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> consequuntur quae</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> adipisci atque cum quia aut</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>I am proficient in cpp, python and SQL. I am also good in AI/ML and have worked on a lot of ML/Deep Learning projects. I have worked on a full stack AI based saas product from scratch which is being used by 100s of user as of now.</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">CPP <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Python <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">HTML,CSS <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">Flask <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">AI/ML <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Generative AI <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Nishant SIngh</h4>
-              <p><em>Committed and goal-oriented Engineering student looking to pursue a career in the software engineering domain. Possess excellent knowledge in C++, Python, Machine Learning , Deep Learning . Ability to learn things quickly and capable of working in a fast-paced and team-driven environment.</em></p>
-              <ul>
-                <li>Nandana, Atraulia, Azamgarh Uttar Pradesh ,India</li>
-                <li>9602269504</li>
-                <li>nishantsingh4045@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor Of Engineering in ECE</h4>
-              <h5>2019 - 2023</h5>
-              <h5>8.41 CGPA</h5>
-              <p><em>UIET Panjab University,Chandigarh</em></p>
-              
-            </div>
-            <div class="resume-item">
-              <h4>Class 12th</h4>
-              <h5>2018</h5>
-              
-              <h5>69.40%</h5>
-              <p><em>SBSRIC,Azamgarh</em></p>
-              
-            </div>
-            <div class="resume-item">
-              <h4>Class 10th</h4>
-              <h5>2016</h5>
-              <h5>10 CGPA </h5>
-              <p><em>Children College,Azamgarh</em></p>
-              
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h3>Stridec</h3>
-              <h4>Full stack Python(AI) Developer</h4>
-              <h5>Sept 2023 - Present</h5>
-              <p><em>Remote </em></p>
-              <ul>
-                <li>Worked on a full stack AI bases saas product from scratch</li>
-                <li>Takes full responsibility of the product from initital stage to final stage development .</li>
-                <li>Worked with a lot of Generative AI tools including Openai, Gemini, Palm, llama2, Langchain, Vector db, llamaindex etc.</li>
-                <li>Reduce the api cost by upto 40% by effective use of algorithm and a slightely different approach.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h3>Samsung SDS</h3>
-              <h4>SDE intern</h4>
-              <h5>March 2023 - June 2023</h5>
-              <p><em>Gurugram India</em></p>
-              <ul>
-                <li>Learned a lot of new tech stacks like Java ,springboot, Python</li>
-                <li>Managed to complete the capstone project and tasks at a given time while under pressure</li>
-                
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h3>Nanoprecise</h3>
-              <h4>Product Development Intern</h4>
-              <h5>Jan 2023 - Feb 2023</h5>
-              <p><em>Banglore India</em></p>
-              <ul>
-                <li>Worked on implementing new feature while working with cross functioning teams</li>
-                <li>Researching for new features for the hero product of the startup</li>
-                
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Here are some of the projects that I have worked on. I have worked on a lot of projects and have a good knowledge of Python, Machine Learning, Deep Learning, Data Science, and Web Development.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">AI/ML</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <h3>ChatGPT clone made using openai,Django</h3>
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Nishantsingh45/chatbot1.0" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-AI/ML">
-            <h3>Face Mask Detectng device</h3>
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Nishantsingh45/Mask_detection" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-AI/ML">
-            <h3>Behaivour Cloning self driving car</h3>
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Nishantsingh45/Behaivour_Cloning_Self_Driving_car" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <h3>TIC TAC Game made using Flutter</h3>
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/Nishantsingh45/Tic-tac" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web"style="display: none;">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services"style="display: none;">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>I have worked as a freelancer over few plateforms and have delivered some projects. i</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg"style="display: none;">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Feel free to contact me for any queries or for any project. I am always open for new opportunities and projects.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Nandana ,Atraulia,Azamgarh, Uttar Pradesh 223223</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>nishantsingh4045@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>9602269504</p>
-              </div>
-              
-              <iframe src="https://www.google.com/maps/embed/v1/place?q=SAI+PAINT+AND+HARDWARE,+Atraulia+-+Rajesultanpur+Road,+Achali+Pur,+Uttar+Pradesh,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-         
-      
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        <strong><span>Nishant Singh</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
       </div>
     </div>
-  </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">MAR — JUNE 2023</div>
+        <div class="exp-loc">Gurugram, India</div>
+        <div class="exp-badge past">intern</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-company">Samsung SDS</div>
+        <div class="exp-role">SDE Intern</div>
+        <ul class="exp-bullets">
+          <li>Built internal backend automation and performance monitoring tools in an Agile environment; strengthened production-quality SDLC practices.</li>
+        </ul>
+      </div>
+    </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-date">JAN — FEB 2023</div>
+        <div class="exp-loc">Bangalore, India</div>
+        <div class="exp-badge past">intern</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-company">Nanoprecise Sci Corp</div>
+        <div class="exp-role">Product Development Intern</div>
+        <ul class="exp-bullets">
+          <li>Built real-time IoT monitoring pipelines for equipment health and ML-based predictive maintenance using sensor data.</li>
+        </ul>
+      </div>
+    </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="https://app.dummywebdemo.xyz/static/chatbox.js" data-src="https://app.dummywebdemo.xyz/chat/script/2ffb780a382ba57f79b1da2af5701210" color="#2e90fa"></script>
+  </div>
+</section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label"><span class="num">02 /</span> PROJECTS</div>
+  <div class="projects-grid">
+
+    <!-- WISP — featured -->
+    <a href="https://github.com/Nishantsingh45/wisp" target="_blank" class="project-card featured reveal">
+      <div>
+        <div class="project-tag">OPEN SOURCE</div>
+        <div class="project-name">Wisp</div>
+        <div class="project-sub">Offline AI Dictation Tool</div>
+        <p class="project-desc">
+          Native-Rust push-to-talk dictation for Windows powered by <strong>Whisper.cpp</strong>. Fully offline — no cloud, no API key, no GPU required. CPU, Vulkan, and CUDA backends supported on any Windows 10/11 machine.
+        </p>
+        <p class="project-desc">
+          Built because every existing option was either cloud-dependent or bloated. Ended up orders of magnitude leaner than the Electron alternatives.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">Rust</span>
+          <span class="stack-tag">whisper.cpp</span>
+          <span class="stack-tag">Vulkan</span>
+          <span class="stack-tag">CUDA</span>
+          <span class="stack-tag">WebRTC VAD</span>
+          <span class="stack-tag">WASAPI</span>
+          <span class="stack-tag">GitHub Actions</span>
+        </div>
+        <span class="project-link">view on github →</span>
+      </div>
+      <div class="project-stats">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span class="terminal-title">wisp — benchmarks</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-comment"># vs Electron alternatives</span></div>
+            <div>&nbsp;</div>
+            <div>
+              <span class="t-key">disk_size</span>
+              <span class="t-comment"> ···· </span>
+              <span class="t-num">240 MB</span>
+              <span class="t-comment"> vs ~900 MB</span>
+            </div>
+            <div>
+              <span class="t-key">cold_start_ram</span>
+              <span class="t-comment"> · </span>
+              <span class="t-num">11 MB</span>
+              <span class="t-comment"> vs ~300 MB</span>
+            </div>
+            <div>
+              <span class="t-key">idle_ram</span>
+              <span class="t-comment"> ····· </span>
+              <span class="t-num">~44 MB</span>
+              <span class="t-comment"> (evicted)</span>
+            </div>
+            <div>
+              <span class="t-key">latency</span>
+              <span class="t-comment"> ······ </span>
+              <span class="t-num">~2.9 s</span>
+              <span class="t-comment"> Vulkan</span>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+              <span class="t-prompt">$</span>
+              <span class="t-cmd"> pipeline</span>
+            </div>
+            <div>
+              <span class="t-comment"># WASAPI → VAD → Whisper → clipboard</span>
+            </div>
+            <div>&nbsp;</div>
+            <div><span class="t-cursor"></span></div>
+          </div>
+        </div>
+        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+          <div class="stat-row">
+            <span class="stat-label">DISK SIZE</span>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:27%; animation-delay:0.2s"></div></div>
+            <span class="stat-val">–73%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">COLD RAM</span>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:4%; animation-delay:0.4s"></div></div>
+            <span class="stat-val">–95%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">IDLE RAM</span>
+            <div class="stat-bar"><div class="stat-bar-fill" style="width:7%; animation-delay:0.6s"></div></div>
+            <span class="stat-val">–93%</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Business Card Bot -->
+    <a href="https://github.com/Nishantsingh45/Namecard_bot" target="_blank" class="project-card reveal">
+      <div class="project-tag system">BACKEND · BOT</div>
+      <div class="project-name">Namecard Bot</div>
+      <div class="project-sub">Business Card Scanner via WhatsApp</div>
+      <p class="project-desc">
+        Real-time WhatsApp bot using <strong>OCR + WhatsApp Business API</strong> to digitize business cards. Low-latency image processing pipeline with structured contact extraction — straight from a chat.
+      </p>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">OCR</span>
+        <span class="stack-tag">WhatsApp API</span>
+      </div>
+      <span class="project-link">view on github →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label"><span class="num">03 /</span> SKILLS</div>
+  <div class="skills-grid">
+
+    <div class="skill-group reveal">
+      <div class="skill-group-name">AI AGENT STACK</div>
+      <div class="skill-tags">
+        <span class="skill-tag hot">MCP</span>
+        <span class="skill-tag hot">Agentic RAG</span>
+        <span class="skill-tag hot">LangGraph</span>
+        <span class="skill-tag hot">LangChain</span>
+        <span class="skill-tag">Multi-Agent Systems</span>
+        <span class="skill-tag">Voice Agents</span>
+        <span class="skill-tag">Function Calling</span>
+        <span class="skill-tag">OpenAI Agents SDK</span>
+        <span class="skill-tag">LlamaIndex</span>
+        <span class="skill-tag">PydanticAI</span>
+        <span class="skill-tag">CrewAI</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <div class="skill-group-name">RAG & VECTOR DBS</div>
+      <div class="skill-tags">
+        <span class="skill-tag hot">PGVector</span>
+        <span class="skill-tag hot">Hybrid Search</span>
+        <span class="skill-tag">Pinecone</span>
+        <span class="skill-tag">FAISS</span>
+        <span class="skill-tag">Weaviate</span>
+        <span class="skill-tag">Qdrant</span>
+        <span class="skill-tag">Embeddings</span>
+        <span class="skill-tag">Semantic Chunking</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <div class="skill-group-name">BACKEND & INFRA</div>
+      <div class="skill-tags">
+        <span class="skill-tag hot">FastAPI</span>
+        <span class="skill-tag hot">WebSockets</span>
+        <span class="skill-tag">Flask</span>
+        <span class="skill-tag">Django</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">AWS Bedrock</span>
+        <span class="skill-tag">Hugging Face</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <div class="skill-group-name">LANGUAGES</div>
+      <div class="skill-tags">
+        <span class="skill-tag hot">Python</span>
+        <span class="skill-tag hot">Rust</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">NoSQL</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label"><span class="num">04 /</span> CONTACT</div>
+  <div class="contact-inner">
+    <div class="contact-text reveal">
+      <h2>Let's build<br>something real.</h2>
+      <p>Open to roles where I can own technical direction, work close to the problem, and ship things that matter. Small teams preferred.</p>
+      <a href="mailto:nishantsingh4045@gmail.com" class="btn btn-primary">nishantsingh4045@gmail.com</a>
+    </div>
+    <div class="contact-links reveal">
+      <a href="https://linkedin.com/in/nishant-singh-a5b051199/" target="_blank" class="contact-link">
+        <div class="cl-icon">in</div>
+        <span class="cl-label">LinkedIn</span>
+        <span class="cl-val">nishant-singh ↗</span>
+      </a>
+      <a href="https://github.com/Nishantsingh45" target="_blank" class="contact-link">
+        <div class="cl-icon">gh</div>
+        <span class="cl-label">GitHub</span>
+        <span class="cl-val">Nishantsingh45 ↗</span>
+      </a>
+      <a href="https://leetcode.com/ue195079eceuiet/" target="_blank" class="contact-link">
+        <div class="cl-icon">lc</div>
+        <span class="cl-label">LeetCode</span>
+        <span class="cl-val">ue195079eceuiet ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Nishant Singh</span></p>
+  <p>Built with HTML · No frameworks · No fluff</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Stat bars trigger on scroll
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.stat-bar-fill').forEach(bar => {
+          bar.style.animationPlayState = 'running';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.project-card.featured').forEach(el => {
+    el.querySelectorAll('.stat-bar-fill').forEach(bar => {
+      bar.style.animationPlayState = 'paused';
+    });
+    barObserver.observe(el);
+  });
+</script>
 </body>
-
 </html>
